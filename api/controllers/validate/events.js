@@ -9,11 +9,7 @@
 module.exports = {
   fn: async function () {
     const { req, res } = this;
-    //const decodedJWT = await sails.helpers.aadB2C.with({ jwt: req.headers.authorization.split('Bearer ')[1] });
-    //mock whilst we arent actually enforcing sign in to Artemis
-    const decodedJWT = {
-      sub: '19a93084-6c58-48de-9abc-49681c9bfcee'
-    };
+    const decodedJWT = await sails.helpers.aadB2C.with({ jwt: req.headers.authorization.split('Bearer ')[1] });
     let eventsForUser = await Agent.find({ user: decodedJWT.sub }).populate('event');
     eventsForUser = eventsForUser.filter((userRole) => {
       return userRole.role === 'SCAN_AGENT';
