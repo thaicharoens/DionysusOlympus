@@ -33,7 +33,7 @@ jobs:
         tags: dionysusolympus.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_ea23c947334e499e83b05edfdfa364d0 }}/dionysusolympus/latest:${{ github.sha }}
         file: ./Dockerfile
         build-args: |
-          GIT_SHA=${{GITHUB_SHA}}
+          GIT_SHA=${{github.sha}}
 
 
   deploy:
