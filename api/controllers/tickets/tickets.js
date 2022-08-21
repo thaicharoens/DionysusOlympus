@@ -25,6 +25,7 @@ module.exports = {
       message:'Tickets for user returned',
       tickets: tickets.map((ticket) => {
         delete ticket.event.image;
+        ticket.transferable = ticket.transferable && !ticket.scanned;
         return ticket;
       })
     });
