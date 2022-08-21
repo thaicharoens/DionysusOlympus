@@ -15,7 +15,7 @@
     "b2c": "^1.0.0",
     "body-parser": "^1.20.0",
     "crypto-js": "^4.1.1",
-    "grunt": "1.0.4",
+    "grunt": "1.5.3",
     "isomorphic-fetch": "^3.0.0",
     "moment": "^2.29.3",
     "passport": "^0.6.0",
