@@ -1,0 +1,52 @@
+{
+  "name": "dionysus-olympus",
+  "private": true,
+  "version": "0.0.0",
+  "description": "a Sails application",
+  "keywords": [],
+  "dependencies": {
+    "@azure/msal-node": "^1.10.0",
+    "@microsoft/microsoft-graph-client": "^3.0.2",
+    "@sailshq/connect-redis": "^3.2.1",
+    "@sailshq/lodash": "^3.10.3",
+    "@sailshq/socket.io-redis": "^5.2.0",
+    "@sendgrid/mail": "^7.7.0",
+    "azure-jwt-verify": "^1.0.0",
+    "b2c": "^1.0.0",
+    "body-parser": "^1.20.0",
+    "crypto-js": "^4.1.1",
+    "grunt": "1.0.4",
+    "isomorphic-fetch": "^3.0.0",
+    "moment": "^2.29.3",
+    "passport": "^0.6.0",
+    "randexp": "^0.5.3",
+    "sails": "^1.5.2",
+    "sails-hook-grunt": "^5.0.0",
+    "sails-hook-orm": "^4.0.0",
+    "sails-hook-sockets": "^2.0.0",
+    "sails-mongo": "^2.0.0",
+    "skipper": "^0.9.1",
+    "stripe": "^9.9.0",
+    "svix": "^0.63.1",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "eslint": "5.16.0"
+  },
+  "scripts": {
+    "start": "NODE_ENV=production node app.js",
+    "test": "npm run lint && npm run custom-tests && echo 'Done.'",
+    "lint": "./node_modules/eslint/bin/eslint.js . --max-warnings=0 --report-unused-disable-directives && echo '✔  Your .js files look good.'",
+    "custom-tests": "echo \"(No other custom tests yet.)\" && echo"
+  },
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/codespace/dionysus-olympus.git"
+  },
+  "author": "codespace",
+  "license": "",
+  "engines": {
+    "node": "^16.14"
+  }
+}
