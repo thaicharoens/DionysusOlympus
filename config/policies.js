@@ -32,6 +32,7 @@ module.exports.policies = {
   'validate/events': true,
   'validate/device-registration': true,
   'validate/validate': true,
+  'version': true,
 
 
   'admin/tickets/transfer': 'isValidAppsmithKey',

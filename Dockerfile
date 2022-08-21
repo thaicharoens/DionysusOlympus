@@ -16,4 +16,7 @@ RUN npm ci --only=production
 COPY . .
 
 EXPOSE 1337
+ARG GIT_SHA
+ENV GIT_SHA ${GIT_SHA}
+
 CMD [ "node", "app.js" ]
