@@ -15,7 +15,9 @@ RUN npm ci --only=production
 # Bundle app source
 COPY . .
 
-EXPOSE 1337
+EXPOSE 80
+ENV PORT 80
+
 ARG GIT_SHA
 ENV GIT_SHA ${GIT_SHA}
 
