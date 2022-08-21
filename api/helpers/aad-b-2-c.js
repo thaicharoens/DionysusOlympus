@@ -43,6 +43,8 @@ module.exports = {
       case '81173864-6ca0-4380-b943-63fe7e4a519f':
         sails.log(`JWT issued for Dionysus application`);
         break;
+      case '5bf4d52c-10de-498b-b860-369390bf9846':
+        sails.log(`JWT issued for Artemis application`);
       default:
         throw({unknownAudience: {aud: decodedJWT.aud}});
     }
