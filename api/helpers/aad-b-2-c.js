@@ -46,6 +46,8 @@ module.exports = {
       case '5bf4d52c-10de-498b-b860-369390bf9846':
         sails.log(`JWT issued for Artemis application`);
         break;
+      case '9994545d-ae5e-413e-8196-419b6dc90c36':
+        sails.log(`JWT issued for Appsmith dashboard application`);
       default:
         throw({unknownAudience: {aud: decodedJWT.aud}});
     }
