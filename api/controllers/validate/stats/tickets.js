@@ -10,18 +10,15 @@ module.exports = {
   fn: async function () {
     const { req, res } = this;
     const { eventId } = req.allParams();
-    // const decodedJWT = await sails.helpers.aadB2C.with({ jwt: req.headers.authorization.split('Bearer ')[1] });
-    // const agentEventAuthorised = await colAgent.findOne({ user: decodedJWT.sub,event: Event.getDatastore().driver.mongodb.ObjectId(eventId),role:'SCAN_AGENT' }, { session });
-    // if (!agentEventAuthorised) {
-    //   scanResult = {
-    //     status: false,
-    //     rejectReason: 'You are not authorised to scan this event'
-    //   };
-    //   return;
-    // }
-
-    
-
+    const decodedJWT = await sails.helpers.aadB2C.with({ jwt: req.headers.authorization.split('Bearer ')[1] });
+    const agentEventAuthorised = await colAgent.findOne({ user: decodedJWT.sub,event: Event.getDatastore().driver.mongodb.ObjectId(eventId),role:'SCAN_AGENT' }, { session });
+    if (!agentEventAuthorised) {
+      scanResult = {
+        status: false,
+        rejectReason: 'You are not authorised to scan this event'
+      };
+      return;
+    }
     return res.status(200).json({
       status: true,
       total: await Ticket.count({ event: eventId }),
