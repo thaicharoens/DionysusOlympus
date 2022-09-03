@@ -35,6 +35,7 @@ module.exports.routes = {
   'GET /tickets/:id/mobileWallet': { action: 'tickets/mobile-wallet' },
 
   'GET /validate/events': { action: 'validate/events' },
+  'GET /validate/stats/:eventId/tickets': { action: 'validate/stats/tickets' },
   'POST /validate/device-registration': { action: 'validate/device-registration' },
   'POST /validate/validate': { action: 'validate/validate' },
 
