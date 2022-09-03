@@ -11,7 +11,7 @@ module.exports = {
     const { req, res } = this;
     const { eventId } = req.allParams();
     const decodedJWT = await sails.helpers.aadB2C.with({ jwt: req.headers.authorization.split('Bearer ')[1] });
-    const agentEventAuthorised = await colAgent.findOne({ user: decodedJWT.sub,event: Event.getDatastore().driver.mongodb.ObjectId(eventId),role:'SCAN_AGENT' }, { session });
+    const agentEventAuthorised = await Agent.findOne({ user: decodedJWT.sub,event: eventId, role:'SCAN_AGENT' });
     if (!agentEventAuthorised) {
       scanResult = {
         status: false,
