@@ -10,9 +10,10 @@ module.exports = {
   fn: async function () {
     const { req, res } = this;
     const { eventId } = req.allParams();
+    //@todo add a helper to check if current user is authorized with ROLE for EVENT
     const decodedJWT = await sails.helpers.aadB2C.with({ jwt: req.headers.authorization.split('Bearer ')[1] });
-    const agentEventAuthorised = await Agent.findOne({ user: decodedJWT.sub,event: eventId, role:'SCAN_AGENT' });
-    if (!agentEventAuthorised) {
+    const agentEventAuthorised = await Agent.find({ user: decodedJWT.sub,event: eventId, role:'SCAN_AGENT' });
+    if (!Boolean(agentEventAuthorised.length)) {
       scanResult = {
         status: false,
         rejectReason: 'You are not authorised to scan this event'
