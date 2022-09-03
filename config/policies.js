@@ -34,6 +34,7 @@ module.exports.policies = {
   'validate/validate': true,
   'validate/stats/tickets': true,
   'version': true,
+  'pubsub': true,
 
 
   'admin/tickets/transfer': 'isValidAppsmithKey',
