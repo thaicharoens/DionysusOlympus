@@ -21,7 +21,7 @@ module.exports.routes = {
 
   '/': { view: 'pages/homepage' },
   'GET /version': { action: 'version' },
-  'GET /pubsub': { action: 'pubsub' },
+  'GET /pubsub/token': { action: 'pubsub/token' },
   'POST /cart': { action: 'cart/new' },
   'GET /cart/:key': { action: 'cart/cart' },
   'GET /cart/:key/order': { action: 'cart/order' },
