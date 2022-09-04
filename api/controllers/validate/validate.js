@@ -101,6 +101,9 @@ module.exports = {
     }, transactionOptions);
     sails.log('Out of transaction');
 
+    if (scanResult.status) {
+      await sails.helpers.pubsubClient().group(`event_${req.body.event}_scanned`).sendToAll({ticket: scanResult.ticket});
+    }
 
     return res.status(200).json({
       status: true,
