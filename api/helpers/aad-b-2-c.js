@@ -49,6 +49,9 @@ module.exports = {
       case '9994545d-ae5e-413e-8196-419b6dc90c36':
         sails.log(`JWT issued for Appsmith dashboard application`);
         break;
+      case '1c01b240-022d-415f-87cb-d6172c666c95':
+        sails.log(`JWT issued for Athena application`);
+        break;
       default:
         throw({unknownAudience: {aud: decodedJWT.aud}});
     }
