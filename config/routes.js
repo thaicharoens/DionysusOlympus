@@ -48,6 +48,7 @@ module.exports.routes = {
   'POST /admin/tickets/bulk-issue': { action: 'admin/tickets/bulk-issue' },
   'POST /admin/roles': { action: 'admin/roles/set' },
 
+  'GET /global/roles/assigned': { action: 'global/roles/assigned' },
   /***************************************************************************
   *                                                                          *
   * More custom routes here...                                               *

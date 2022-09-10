@@ -9,15 +9,10 @@
  */
 
 module.exports.policies = {
+  '*': false,
+  'event/find': true,
+  'event/findOne': true,
 
-  /***************************************************************************
-  *                                                                          *
-  * Default policy for all controllers and actions, unless overridden.       *
-  * (`true` allows public access)                                            *
-  *                                                                          *
-  ***************************************************************************/
-
-  // '*': true,
   'cart/new': true,
   'cart/cart': true,
   'cart/pay': true,
@@ -43,5 +38,7 @@ module.exports.policies = {
   'admin/uid-to-email': 'isValidAppsmithKey',
   'admin/events/set-total-qty': 'isValidAppsmithKey',
   'admin/tickets/bulk-issue': 'isValidAppsmithKey',
-  'admin/roles/set': 'isValidAppsmithKey'
+  'admin/roles/set': 'isValidAppsmithKey',
+
+  'global/roles/assigned': true,
 };
