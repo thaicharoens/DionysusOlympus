@@ -11,7 +11,7 @@ module.exports = {
     const { req, res } = this;
     const { id } = req.allParams();
     sails.log('Fetching ticket');
-    const ticket = await Ticket.findOne({id: id}).sort({name: 'ASC'});
+    const ticket = await Ticket.findOne({id: id});
     if (!ticket) {
       return res.status(400).json({
         status: false,
